@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact Tai Chi Exercises by Ros Smith for course access, clinic group bookings, and professional inquiries.">
+  <title>Contact &amp; Inquiries | Tai Chi Exercises by Ros Smith - MCSP</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <!-- Replace this commented template with your MemberSpace, Memberful, or Gumroad widget script.
+  <script async src="https://cdn.memberspace.com/scripts/YOUR_SITE_ID.js"></script>
+  -->
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Tai Chi Exercises homepage">
+        <span class="brand-mark" aria-hidden="true">
+          <img src="Logo.png" alt="">
+        </span>
+        <span class="brand-text">Tai Chi Exercises <small>by Ros Smith - MCSP</small></span>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="courses.html">Courses</a>
+        <a href="resources.html">Resources</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html" aria-current="page">Contact</a>
+        <a class="btn btn-small" href="book-course.html">Book a Course</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="contact-page section">
+      <div class="container quick-contact-shell">
+        <div class="quick-contact-hero reveal" aria-labelledby="contact-title">
+          <p class="eyebrow">Quick contact</p>
+          <h1 id="contact-title">How can Ros help?</h1>
+          <p>Ask about self-paced course access, Part 1 or Part 2, clinical group training, CPD, or adapted Tai Chi resources.</p>
+        </div>
+
+        <div class="quick-contact-grid">
+          <aside class="quick-contact-panel reveal" aria-label="Direct contact options">
+            <a class="quick-contact-card" href="mailto:info@taichiexercises.co.uk">
+              <span aria-hidden="true">✉</span>
+              <strong>Email Ros</strong>
+              <small>info@taichiexercises.co.uk</small>
+            </a>
+
+            <a class="quick-contact-card" href="tel:01900826873">
+              <span aria-hidden="true">☎</span>
+              <strong>Call the office</strong>
+              <small>01900 826873</small>
+            </a>
+
+            <a class="quick-contact-card" href="book-course.html">
+              <span aria-hidden="true">£</span>
+              <strong>Book online</strong>
+              <small>Choose Part 1 or Part 2</small>
+            </a>
+
+            <div class="quick-note">
+              <strong>Best for</strong>
+              <p>Healthcare professionals, rehabilitation teams, wellbeing practitioners, and organisations planning adapted movement sessions.</p>
+            </div>
+          </aside>
+
+          <section class="inquiry-card quick-form-card reveal" aria-labelledby="inquiry-title">
+            <div class="form-intro">
+              <p class="eyebrow">Send a short message</p>
+              <h2 id="inquiry-title">Quick inquiry</h2>
+            </div>
+
+            <form class="inquiry-form" id="inquiryForm" novalidate>
+              <div class="form-field visually-hidden" aria-hidden="true">
+                <label for="companyWebsite">Company website</label>
+                <input id="companyWebsite" name="companyWebsite" type="text" tabindex="-1" autocomplete="off" data-honeypot>
+              </div>
+
+              <div class="form-field">
+                <label for="fullName">Name</label>
+                <input id="fullName" name="fullName" type="text" autocomplete="name" placeholder="Your name" maxlength="100" required>
+                <p class="field-error" id="fullName-error"></p>
+              </div>
+
+              <div class="form-field">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" autocomplete="email" placeholder="name@example.com" maxlength="254" required>
+                <p class="field-error" id="email-error"></p>
+              </div>
+
+              <div class="form-field form-field-full">
+                <label for="inquiryType">I need help with</label>
+                <select id="inquiryType" name="inquiryType" required>
+                  <option value="">Choose one</option>
+                  <option>Part 1 Course</option>
+                  <option>Part 2 Course</option>
+                  <option>Group / NHS Booking</option>
+                  <option>CPD or Course Access</option>
+                  <option>General Question</option>
+                </select>
+                <p class="field-error" id="inquiryType-error"></p>
+              </div>
+
+              <div class="form-field form-field-full">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" placeholder="Tell us what you need..." maxlength="2000" required></textarea>
+                <p class="field-error" id="message-error"></p>
+              </div>
+
+              <button class="btn form-submit" type="submit">Send Message</button>
+            </form>
+
+            <div class="form-success" id="formSuccess" role="status" aria-live="polite" hidden>
+              <strong>Thank you!</strong>
+              <p>Your message has been noted. Ros Smith will contact you shortly.</p>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="footer-brand" href="index.html">Tai Chi Exercises by Ros Smith - MCSP</a>
+        <p>Adapted Tai Chi education for healthcare professionals, rehabilitation teams, and wellbeing practitioners.</p>
+      </div>
+
+      <nav aria-label="Footer quick links">
+        <h2>Links</h2>
+        <a href="courses.html">Courses</a>
+        <a href="resources.html">Resources</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <address>
+        <h2>Contact</h2>
+        <a href="tel:01900826873">01900 826873</a>
+        <a href="mailto:info@taichiexercises.co.uk">info@taichiexercises.co.uk</a>
+        <span>Milton Hall, Whitrigg, Cumbria, CA7 4QE</span>
+      </address>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Tai Chi Exercises by Ros Smith. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="security.js"></script>
+  <script src="script.js"></script>
+  <script>
+    const inquiryForm = document.getElementById("inquiryForm");
+    const formSuccess = document.getElementById("formSuccess");
+    const requiredFields = [
+      "fullName",
+      "email",
+      "inquiryType",
+      "message"
+    ];
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const maxLengths = {
+      fullName: 100,
+      email: 254,
+      message: 2000
+    };
+
+    function setFieldError(field, message) {
+      const error = document.getElementById(`${field.id}-error`);
+
+      field.classList.toggle("has-error", Boolean(message));
+      field.setAttribute("aria-invalid", String(Boolean(message)));
+
+      if (error) {
+        error.textContent = message;
+      }
+    }
+
+    function validateInquiryForm() {
+      if (window.TCESecurity?.isHoneypotTriggered(inquiryForm)) {
+        return false;
+      }
+
+      let isValid = true;
+
+      requiredFields.forEach((fieldId) => {
+        const field = document.getElementById(fieldId);
+        if (!field) return;
+
+        const value = window.TCESecurity?.sanitizeText(
+          field.value,
+          maxLengths[fieldId] || 500
+        ) || "";
+        field.value = value;
+        const label = field.previousElementSibling?.textContent || "This field";
+
+        if (!value) {
+          setFieldError(field, `${label} is required.`);
+          isValid = false;
+          return;
+        }
+
+        if (fieldId === "email" && !emailPattern.test(value)) {
+          setFieldError(field, "Please enter a valid email address.");
+          isValid = false;
+          return;
+        }
+
+        setFieldError(field, "");
+      });
+
+      return isValid;
+    }
+
+    inquiryForm?.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      if (!validateInquiryForm()) return;
+
+      inquiryForm.classList.add("is-hidden");
+      window.setTimeout(() => {
+        inquiryForm.hidden = true;
+        formSuccess.hidden = false;
+        formSuccess.classList.add("show");
+        formSuccess.focus?.();
+      }, 220);
+    });
+  </script>
+</body>
+</html>

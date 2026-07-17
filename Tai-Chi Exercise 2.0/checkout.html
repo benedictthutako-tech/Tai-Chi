@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Checkout for Adapted Tai Chi Exercises self-paced courses.">
+  <title>Checkout - Tai Chi Exercises by Ros Smith</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Tai Chi Exercises homepage">
+        <span class="brand-mark" aria-hidden="true">
+          <img src="Logo.png" alt="">
+        </span>
+        <span class="brand-text">Tai Chi Exercises <small>by Ros Smith - MCSP</small></span>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="courses.html">Courses</a>
+        <a href="resources.html">Resources</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+        <a class="btn btn-small" href="book-course.html">Book a Course</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="checkout-section section" aria-labelledby="checkout-title">
+      <div class="container checkout-grid">
+        <aside class="checkout-summary reveal" aria-labelledby="order-title">
+          <p class="eyebrow">Secure checkout</p>
+          <h1 id="checkout-title">Complete your booking</h1>
+
+          <div class="order-card">
+            <h2 id="order-title">Order summary</h2>
+            <div class="order-logo">
+              <img data-checkout-logo src="assets/images/part1-self-paced-logo.png" alt="Selected course logo">
+            </div>
+            <h3 data-checkout-title>Self-Paced, Adapted Tai Chi Exercises, Part 1</h3>
+            <p data-checkout-description>Individual self-paced online course access.</p>
+            <dl class="order-total">
+              <div>
+                <dt>Original price</dt>
+                <dd><del>£150.00</del></dd>
+              </div>
+              <div>
+                <dt>Current price</dt>
+                <dd><strong>£100.50</strong></dd>
+              </div>
+            </dl>
+          </div>
+        </aside>
+
+        <section class="payment-panel reveal" aria-labelledby="payment-title">
+          <div class="section-heading">
+            <p class="eyebrow">Payment</p>
+            <h2 id="payment-title">Choose a payment method</h2>
+          </div>
+
+          <div class="express-payment" aria-label="Express payment options">
+            <button class="express-pay-btn apple-pay-btn" type="button" data-express-pay="Apple Pay">
+              <span aria-hidden="true"></span>
+              Apple Pay
+            </button>
+
+            <button class="express-pay-btn google-pay-btn" type="button" data-express-pay="Google Pay">
+              <span aria-hidden="true">G</span>
+              Google Pay
+            </button>
+          </div>
+
+          <div class="payment-divider"><span>or choose another payment method</span></div>
+
+          <div class="payment-option-list" role="radiogroup" aria-label="Payment method">
+            <label class="payment-option">
+              <input type="radio" name="paymentMethod" value="card" checked>
+              <span>
+                <strong>Card payment</strong>
+                <small>Use this for individual self-paced course bookings.</small>
+              </span>
+            </label>
+
+            <label class="payment-option">
+              <input type="radio" name="paymentMethod" value="bank">
+              <span>
+                <strong>Bank transfer</strong>
+                <small>Payment details will be confirmed after booking.</small>
+              </span>
+            </label>
+
+            <label class="payment-option">
+              <input type="radio" name="paymentMethod" value="invoice">
+              <span>
+                <strong>Invoice on request</strong>
+                <small>For NHS, clinic, hospice, or organisation bookings.</small>
+              </span>
+            </label>
+          </div>
+
+          <form class="checkout-form" data-checkout-form>
+            <div class="form-row">
+              <label for="checkout-name">Full name</label>
+              <input id="checkout-name" name="name" type="text" autocomplete="name" maxlength="100" required>
+            </div>
+
+            <div class="form-row">
+              <label for="checkout-email">Email address</label>
+              <input id="checkout-email" name="email" type="email" autocomplete="email" maxlength="254" required>
+            </div>
+
+            <div class="form-row">
+              <label for="checkout-organisation">Organisation / workplace</label>
+              <input id="checkout-organisation" name="organisation" type="text" autocomplete="organization" maxlength="120">
+            </div>
+
+            <div class="card-fields" data-card-fields hidden>
+              <p class="payment-message">Card details are disabled in this prototype. Connect Stripe Elements or another PCI-compliant provider before accepting card payments.</p>
+              <div class="form-row">
+                <label for="card-number">Card number</label>
+                <input id="card-number" name="cardNumber" type="text" inputmode="numeric" placeholder="Use Stripe Elements in production" disabled aria-disabled="true" autocomplete="off">
+              </div>
+
+              <div class="checkout-split">
+                <div class="form-row">
+                  <label for="card-expiry">Expiry</label>
+                  <input id="card-expiry" name="cardExpiry" type="text" inputmode="numeric" placeholder="MM / YY" disabled aria-disabled="true" autocomplete="off">
+                </div>
+
+                <div class="form-row">
+                  <label for="card-cvc">CVC</label>
+                  <input id="card-cvc" name="cardCvc" type="text" inputmode="numeric" placeholder="123" disabled aria-disabled="true" autocomplete="off">
+                </div>
+              </div>
+            </div>
+
+            <div class="payment-message" data-payment-message>
+              This is a local checkout template. Connect this button to Stripe, WooCommerce, or your chosen payment provider when ready.
+            </div>
+
+            <button class="btn enroll-btn checkout-submit" type="submit">Continue to Payment</button>
+          </form>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="footer-brand" href="index.html">Tai Chi Exercises by Ros Smith - MCSP</a>
+        <p>Adapted Tai Chi education for healthcare professionals, rehabilitation teams, and wellbeing practitioners.</p>
+      </div>
+
+      <nav aria-label="Footer quick links">
+        <h2>Links</h2>
+        <a href="courses.html">Courses</a>
+        <a href="resources.html">Resources</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <address>
+        <h2>Contact</h2>
+        <a href="tel:01900826873">01900 826873</a>
+        <a href="mailto:info@taichiexercises.co.uk">info@taichiexercises.co.uk</a>
+        <span>Milton Hall, Whitrigg, Cumbria, CA7 4QE</span>
+      </address>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Tai Chi Exercises by Ros Smith. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <button id="toTop" class="to-top" type="button" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M12 5 5 12l1.4 1.4 4.6-4.6V20h2V8.8l4.6 4.6L19 12 12 5Z"></path>
+    </svg>
+  </button>
+
+  <script src="security.js"></script>
+  <script src="main.js"></script>
+  <script>
+    const checkoutCourses = {
+      part1: {
+        title: "Self-Paced, Adapted Tai Chi Exercises, Part 1",
+        description: "Individual self-paced online course access.",
+        logo: "assets/images/part1-self-paced-logo.png"
+      },
+      part2: {
+        title: "Self-Paced, Adapted Tai Chi Exercises, Part 2",
+        description: "Follow-on self-paced online course access for Part 1 learners.",
+        logo: "assets/images/part2-self-paced-logo.png"
+      }
+    };
+
+    const selectedCourse = window.TCESecurity.readAllowedSearchParam(
+      "course",
+      window.TCESecurity.ALLOWED_CHECKOUT_COURSES,
+      "part1"
+    );
+    const course = checkoutCourses[selectedCourse];
+    const title = document.querySelector("[data-checkout-title]");
+    const description = document.querySelector("[data-checkout-description]");
+    const logo = document.querySelector("[data-checkout-logo]");
+
+    title.textContent = course.title;
+    description.textContent = course.description;
+    logo.src = course.logo;
+
+    const paymentRadios = document.querySelectorAll("input[name='paymentMethod']");
+    const expressButtons = document.querySelectorAll("[data-express-pay]");
+    const cardFields = document.querySelector("[data-card-fields]");
+    const paymentMessage = document.querySelector("[data-payment-message]");
+    const paymentCopy = {
+      card: "Card entry is disabled in this prototype. Use Stripe Elements or another PCI-compliant provider before going live.",
+      bank: "Bank transfer selected. After submitting, show bank details or send them by email.",
+      invoice: "Invoice selected. Use this option for NHS, clinic, hospice, or organisation bookings."
+    };
+
+    paymentRadios.forEach((radio) => {
+      radio.addEventListener("change", () => {
+        cardFields.hidden = true;
+        paymentMessage.textContent = paymentCopy[radio.value];
+      });
+    });
+
+    expressButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const method = button.dataset.expressPay === "Apple Pay" ? "apple-pay" : "google-pay";
+        window.location.href = `payment.html?course=${encodeURIComponent(selectedCourse)}&method=${encodeURIComponent(method)}`;
+      });
+    });
+
+    document.querySelector("[data-checkout-form]").addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      const name = window.TCESecurity.sanitizeText(
+        document.getElementById("checkout-name")?.value || "",
+        100
+      );
+      const email = window.TCESecurity.sanitizeText(
+        document.getElementById("checkout-email")?.value || "",
+        254
+      );
+
+      if (!name || !window.TCESecurity.isValidEmail(email)) {
+        paymentMessage.textContent = "Please enter a valid name and email address before continuing.";
+        return;
+      }
+
+      paymentMessage.textContent = "Thank you. Your booking payment flow is ready to connect to a live payment provider.";
+    });
+  </script>
+</body>
+</html>

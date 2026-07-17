@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Payment method confirmation for Adapted Tai Chi Exercises courses.">
+  <title>Payment - Tai Chi Exercises by Ros Smith</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Tai Chi Exercises homepage">
+        <span class="brand-mark" aria-hidden="true">
+          <img src="Logo.png" alt="">
+        </span>
+        <span class="brand-text">Tai Chi Exercises <small>by Ros Smith - MCSP</small></span>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="courses.html">Courses</a>
+        <a href="resources.html">Resources</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+        <a class="btn btn-small" href="book-course.html">Book a Course</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="payment-status-section section" aria-labelledby="payment-status-title">
+      <div class="container">
+        <div class="payment-status-card reveal">
+          <div class="payment-status-icon" data-payment-icon aria-hidden="true"></div>
+          <p class="eyebrow" data-payment-eyebrow>Apple Pay selected</p>
+          <h1 id="payment-status-title">Ready to complete payment</h1>
+          <p data-payment-copy>Your Apple Pay checkout has been selected for this course booking.</p>
+
+          <div class="payment-status-order">
+            <span data-payment-course>Self-Paced, Adapted Tai Chi Exercises, Part 1</span>
+            <strong>£100.50</strong>
+          </div>
+
+          <div class="payment-status-note">
+            This is the local payment destination. To take live Apple Pay or Google Pay payments, connect this screen to Stripe, WooCommerce Payments, or another payment provider with Apple Pay and Google Pay enabled.
+          </div>
+
+          <div class="course-actions">
+            <a class="btn enroll-btn" href="checkout.html" data-return-checkout>Back to Checkout</a>
+            <a class="btn btn-secondary" href="book-course.html">Choose Another Course</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="main.js"></script>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const courseKey = params.get("course") === "part2" ? "part2" : "part1";
+    const methodKey = params.get("method") === "google-pay" ? "google-pay" : "apple-pay";
+    const courseNames = {
+      part1: "Self-Paced, Adapted Tai Chi Exercises, Part 1",
+      part2: "Self-Paced, Adapted Tai Chi Exercises, Part 2"
+    };
+    const methodNames = {
+      "apple-pay": "Apple Pay",
+      "google-pay": "Google Pay"
+    };
+
+    const methodName = methodNames[methodKey];
+    document.querySelector("[data-payment-icon]").textContent = methodKey === "apple-pay" ? "" : "G";
+    document.querySelector("[data-payment-eyebrow]").textContent = `${methodName} selected`;
+    document.querySelector("[data-payment-copy]").textContent = `Your ${methodName} checkout has been selected for this course booking.`;
+    document.querySelector("[data-payment-course]").textContent = courseNames[courseKey];
+    document.querySelector("[data-return-checkout]").href = `checkout.html?course=${courseKey}`;
+  </script>
+</body>
+</html>

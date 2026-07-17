@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Student course dashboard for Adapted Tai Chi Exercises - Part 1.">
+  <title>Course Dashboard | Adapted Tai Chi Exercises - Part 1</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <!-- Replace this commented template with your MemberSpace, Memberful, or Gumroad widget script.
+  <script async src="https://cdn.memberspace.com/scripts/YOUR_SITE_ID.js"></script>
+  -->
+</head>
+<body class="dashboard-page">
+  <header class="dashboard-topbar">
+    <a class="brand" href="index.html" aria-label="Tai Chi Exercises homepage">
+      <span class="brand-mark" aria-hidden="true">
+        <img src="Logo.png" alt="">
+      </span>
+      <span class="brand-text">Tai Chi Exercises <small>Student Portal</small></span>
+    </a>
+
+    <div class="dashboard-user">
+      <span>Part 1</span>
+      <strong>Student Dashboard</strong>
+      <button class="logout-link" type="button" data-demo-logout>Logout</button>
+    </div>
+  </header>
+
+  <main class="course-shell" data-protected-course="adapted-tai-chi-part-1">
+    <aside class="course-sidebar" aria-labelledby="course-nav-title">
+      <div class="course-progress">
+        <p class="eyebrow">Adapted Tai Chi Exercises</p>
+        <h1 id="course-nav-title">Part 1 Course</h1>
+        <div class="progress-track" aria-label="Course progress">
+          <span style="width: 25%"></span>
+        </div>
+        <p>1 of 4 modules complete</p>
+      </div>
+
+      <nav class="module-list" aria-label="Course modules">
+        <a class="module-item is-active is-complete" href="#module-video">
+          <input type="checkbox" checked aria-label="Module 1 completed">
+          <span>
+            <strong>Module 1</strong>
+            Introduction
+          </span>
+          <small>Completed</small>
+        </a>
+
+        <a class="module-item" href="#module-video">
+          <input type="checkbox" aria-label="Module 2 not completed">
+          <span>
+            <strong>Module 2</strong>
+            Warm-up Exercises
+          </span>
+          <small>Current</small>
+        </a>
+
+        <a class="module-item is-locked" href="#module-video" aria-disabled="true">
+          <input type="checkbox" disabled aria-label="Module 3 locked">
+          <span>
+            <strong>Module 3</strong>
+            Main Movements
+          </span>
+          <small>Locked</small>
+        </a>
+
+        <a class="module-item is-locked" href="#course-quiz" aria-disabled="true">
+          <input type="checkbox" disabled aria-label="Module 4 locked">
+          <span>
+            <strong>Module 4</strong>
+            Quiz &amp; Certification
+          </span>
+          <small>Locked</small>
+        </a>
+      </nav>
+    </aside>
+
+    <section class="course-content-area" aria-label="Course lesson content">
+      <div class="lesson-header">
+        <div>
+          <p class="eyebrow">Module 1</p>
+          <h2 id="lesson-title">Module 1: Introduction &amp; Principles</h2>
+        </div>
+        <span class="lesson-status">In progress</span>
+      </div>
+
+      <div id="module-video" class="lesson-video" aria-label="Training video player">
+        <iframe
+          id="lesson-video-frame"
+          title="Module 1: Introduction & Principles"
+          src="https://www.youtube.com/embed/Soragl5ApGM"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+      <div class="lesson-actions">
+        <p>Complete the video lesson, then continue to the quiz checkpoint below.</p>
+        <button class="btn" type="button">Mark as Complete &amp; Next</button>
+      </div>
+
+      <section id="course-quiz" class="quiz-panel" aria-labelledby="quiz-title" data-quiz>
+        <div class="quiz-heading">
+          <p class="eyebrow">Knowledge checkpoint</p>
+          <h2 id="quiz-title">Safety &amp; Practice Quiz</h2>
+          <p>Answer all three questions correctly to unlock your CPD certificate message.</p>
+        </div>
+
+        <form class="quiz-form" data-quiz-form>
+          <fieldset class="quiz-question" data-answer="b">
+            <legend>1. What should be checked before introducing adapted Tai Chi in a rehabilitation session?</legend>
+            <label><input type="radio" name="q1" value="a"> The room lighting only</label>
+            <label><input type="radio" name="q1" value="b"> Patient safety, balance needs, and clinical suitability</label>
+            <label><input type="radio" name="q1" value="c"> Whether the movement looks advanced</label>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="a">
+            <legend>2. How should warm-up exercises usually be performed?</legend>
+            <label><input type="radio" name="q2" value="a"> Slowly, with comfortable range and controlled breathing</label>
+            <label><input type="radio" name="q2" value="b"> As quickly as possible to raise intensity</label>
+            <label><input type="radio" name="q2" value="c"> Only after fatigue begins</label>
+          </fieldset>
+
+          <fieldset class="quiz-question" data-answer="c">
+            <legend>3. When adapting repetitions, what is the best clinical principle?</legend>
+            <label><input type="radio" name="q3" value="a"> Use the same number for every patient</label>
+            <label><input type="radio" name="q3" value="b"> Increase repetitions whenever movement is difficult</label>
+            <label><input type="radio" name="q3" value="c"> Match repetitions to tolerance, safety, and therapeutic goals</label>
+          </fieldset>
+
+          <button class="btn" type="submit">Submit Quiz</button>
+        </form>
+
+        <div class="quiz-result" data-quiz-result role="status" aria-live="polite"></div>
+      </section>
+    </section>
+  </main>
+
+  <script>
+    const lessonData = {
+        1: { title: "Module 1: Introduction & Principles", video: "https://www.youtube.com/embed/Soragl5ApGM" },
+        2: { title: "Module 2: Safe Warm-up Routines", video: "https://www.youtube.com/embed/dQw4w9WgXcQ" }, // Keep placeholder for now
+        3: { title: "Module 3: Main Adapted Movements", video: "https://www.youtube.com/embed/dQw4w9WgXcQ" } // Keep placeholder for now
+    };
+
+    const initialLesson = lessonData[1];
+    const lessonFrame = document.getElementById("lesson-video-frame");
+    const lessonTitle = document.getElementById("lesson-title");
+
+    if (lessonFrame && initialLesson) {
+      lessonFrame.src = initialLesson.video;
+      lessonFrame.title = initialLesson.title;
+    }
+
+    if (lessonTitle && initialLesson) {
+      lessonTitle.textContent = initialLesson.title;
+    }
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>
